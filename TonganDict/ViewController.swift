@@ -61,11 +61,16 @@ class ViewController: UIViewController {
         count += 1
     }
     
-    @IBAction func needsReview(_ gesture: UISwipeGestureRecognizer) {
-        result.text = "Needs review"
+    @IBAction func panGestureHandler(_ sender: UIPanGestureRecognizer) {
+        let cardView = sender.view!
+        let translationPoint = sender.translation(in: view)
+        cardView.center = CGPoint(x: view.center.x+translationPoint.x, y: view.center.y+translationPoint.y)
+        manageStateChange(cardView: cardView, sender: sender)
     }
     
-    @IBAction func gotItCorrect(_ gesture: UISwipeGestureRecognizer) {
-        result.text = "Got it correct"
+    func manageStateChange(cardView: UIView, sender: UIPanGestureRecognizer) {
+        if sender.state == .ended {
+            UIView.animate(withDuration: 0.2, animations: {cardView.center = self.view.center})
+        }
     }
 }

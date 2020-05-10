@@ -79,9 +79,8 @@
                                     <constraint firstItem="SuX-W8-50H" firstAttribute="top" secondItem="dQ6-lu-f69" secondAttribute="top" id="tfJ-16-wDj"/>
                                 </constraints>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="j3m-k9-c3j" appends="YES" id="a9X-Yw-XYa"/>
-                                    <outletCollection property="gestureRecognizers" destination="ziI-G3-PWw" appends="YES" id="2kk-yN-ihZ"/>
                                     <outletCollection property="gestureRecognizers" destination="H12-Ri-cJa" appends="YES" id="qto-kn-8gG"/>
+                                    <outletCollection property="gestureRecognizers" destination="uva-64-64b" appends="YES" id="pqa-E0-wfO"/>
                                 </connections>
                             </view>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Here" translatesAutoresizingMaskIntoConstraints="NO" id="rFr-Pu-R8d">
@@ -126,21 +125,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="j3m-k9-c3j">
-                    <connections>
-                        <action selector="needsReview:" destination="BYZ-38-t0r" id="H9g-4h-U0V"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="ziI-G3-PWw">
-                    <connections>
-                        <action selector="gotItCorrect:" destination="BYZ-38-t0r" id="cyr-rP-o5q"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <tapGestureRecognizer id="H12-Ri-cJa">
                     <connections>
                         <action selector="flipCard:" destination="BYZ-38-t0r" id="TtH-g6-xzv"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="uva-64-64b"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="112.3152709359606"/>
         </scene>
