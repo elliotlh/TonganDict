@@ -117,6 +117,7 @@
                     <connections>
                         <outlet property="answer" destination="VH3-S6-Sca" id="enn-eY-YL1"/>
                         <outlet property="answerCard" destination="dQ6-lu-f69" id="0in-80-mVd"/>
+                        <outlet property="cardParentView" destination="Qgc-tW-RR4" id="x5l-yg-Edy"/>
                         <outlet property="outerView" destination="8bC-Xf-vdC" id="CWa-ke-2xE"/>
                         <outlet property="question" destination="Qef-V7-Zz7" id="lfD-xF-g3E"/>
                         <outlet property="questionCard" destination="SuX-W8-50H" id="d6Q-qW-wns"/>
@@ -130,7 +131,11 @@
                         <action selector="flipCard:" destination="BYZ-38-t0r" id="TtH-g6-xzv"/>
                     </connections>
                 </tapGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="uva-64-64b"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="uva-64-64b">
+                    <connections>
+                        <action selector="panGestureHandler:" destination="BYZ-38-t0r" id="vnb-n0-3vm"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="112.3152709359606"/>
         </scene>

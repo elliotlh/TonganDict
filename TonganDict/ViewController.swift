@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var questionCard: UIView!
+    @IBOutlet weak var cardParentView: UIView!
     @IBOutlet weak var answerCard: UIView!
     @IBOutlet weak var outerView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -20,6 +21,8 @@ class ViewController: UIViewController {
     
     private var showingQuestion = true
     private var count = 0
+    private let MARGIN_OFFSET = CGFloat(25)
+    private let SCREEN_WIDTH = UIScreen.main.bounds.width
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,9 +71,23 @@ class ViewController: UIViewController {
         manageStateChange(cardView: cardView, sender: sender)
     }
     
+    func resetCard(done: Bool) -> Void {
+        cardParentView.center.x = self.view.center.x
+    }
+    
     func manageStateChange(cardView: UIView, sender: UIPanGestureRecognizer) {
         if sender.state == .ended {
-            UIView.animate(withDuration: 0.2, animations: {cardView.center = self.view.center})
+            if cardView.center.x >= SCREEN_WIDTH - MARGIN_OFFSET {
+                UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+                    cardView.center = CGPoint(x: cardView.center.x + self.SCREEN_WIDTH, y: cardView.center.y)
+                }, completion: resetCard)
+            } else if cardView.center.x < MARGIN_OFFSET {
+                UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+                    cardView.center = CGPoint(x: cardView.center.x - self.SCREEN_WIDTH, y: cardView.center.y)
+                }, completion: resetCard)
+            } else {
+                UIView.animate(withDuration: 0.2, animations: {cardView.center = self.view.center})
+            }
         }
     }
 }
