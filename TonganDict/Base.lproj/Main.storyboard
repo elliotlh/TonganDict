@@ -15,28 +15,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CardView" translatesAutoresizingMaskIntoConstraints="NO" id="SuX-W8-50H">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qgc-tW-RR4">
                                 <rect key="frame" x="16" y="192" width="343" height="428"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <gestureRecognizers/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="25"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="NKb-Tg-Qgg" appends="YES" id="uci-GU-cZx"/>
-                                    <outletCollection property="gestureRecognizers" destination="GtV-w1-Sjf" appends="YES" id="0F5-B3-BgQ"/>
-                                    <outletCollection property="gestureRecognizers" destination="Qy0-u8-6ih" appends="YES" id="Vdb-4N-mkq"/>
-                                </connections>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQ6-lu-f69">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="428"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VH3-S6-Sca">
+                                                <rect key="frame" x="143" y="203.66666666666669" width="57" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="VH3-S6-Sca" firstAttribute="centerY" secondItem="dQ6-lu-f69" secondAttribute="centerY" id="9Dr-Se-GoJ"/>
+                                            <constraint firstItem="VH3-S6-Sca" firstAttribute="centerX" secondItem="dQ6-lu-f69" secondAttribute="centerX" id="WPh-vX-6hC"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="NKb-Tg-Qgg" appends="YES" id="CBY-QV-kgV"/>
+                                            <outletCollection property="gestureRecognizers" destination="GtV-w1-Sjf" appends="YES" id="k2u-3S-9Xr"/>
+                                            <outletCollection property="gestureRecognizers" destination="Qy0-u8-6ih" appends="YES" id="6q7-Ih-7gm"/>
+                                        </connections>
+                                    </view>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CardView" translatesAutoresizingMaskIntoConstraints="NO" id="SuX-W8-50H">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="428"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qef-V7-Zz7">
+                                                <rect key="frame" x="137" y="203.66666666666669" width="69" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="Qef-V7-Zz7" firstAttribute="centerX" secondItem="SuX-W8-50H" secondAttribute="centerX" id="57V-8v-FnV"/>
+                                            <constraint firstItem="Qef-V7-Zz7" firstAttribute="centerX" secondItem="SuX-W8-50H" secondAttribute="centerX" id="Qyh-Lb-Wep"/>
+                                            <constraint firstItem="Qef-V7-Zz7" firstAttribute="centerY" secondItem="SuX-W8-50H" secondAttribute="centerY" id="UTv-BX-Gp3"/>
+                                            <constraint firstItem="Qef-V7-Zz7" firstAttribute="centerY" secondItem="SuX-W8-50H" secondAttribute="centerY" id="Vpk-zX-x5N"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="25"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="GtV-w1-Sjf" appends="YES" id="0F5-B3-BgQ"/>
+                                            <outletCollection property="gestureRecognizers" destination="NKb-Tg-Qgg" appends="YES" id="uci-GU-cZx"/>
+                                            <outletCollection property="gestureRecognizers" destination="Qy0-u8-6ih" appends="YES" id="Vdb-4N-mkq"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="dQ6-lu-f69" firstAttribute="top" secondItem="Qgc-tW-RR4" secondAttribute="top" id="0S8-AF-qeV"/>
+                                    <constraint firstItem="dQ6-lu-f69" firstAttribute="centerX" secondItem="Qgc-tW-RR4" secondAttribute="centerX" id="JVu-S0-eHf"/>
+                                    <constraint firstItem="SuX-W8-50H" firstAttribute="leading" secondItem="dQ6-lu-f69" secondAttribute="leading" id="LdJ-9p-dvc"/>
+                                    <constraint firstItem="SuX-W8-50H" firstAttribute="leading" secondItem="Qgc-tW-RR4" secondAttribute="leading" id="OEr-mx-a5B"/>
+                                    <constraint firstItem="dQ6-lu-f69" firstAttribute="bottom" secondItem="SuX-W8-50H" secondAttribute="bottom" id="OQQ-nj-0LE"/>
+                                    <constraint firstItem="SuX-W8-50H" firstAttribute="centerY" secondItem="Qgc-tW-RR4" secondAttribute="centerY" id="W2O-Zf-rt4"/>
+                                    <constraint firstItem="SuX-W8-50H" firstAttribute="trailing" secondItem="dQ6-lu-f69" secondAttribute="trailing" id="lOC-1u-YWm"/>
+                                    <constraint firstItem="SuX-W8-50H" firstAttribute="top" secondItem="dQ6-lu-f69" secondAttribute="top" id="tfJ-16-wDj"/>
+                                </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qef-V7-Zz7">
-                                <rect key="frame" x="166.66666666666666" y="395.66666666666669" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Here" translatesAutoresizingMaskIntoConstraints="NO" id="rFr-Pu-R8d">
                                 <rect key="frame" x="0.0" y="99" width="375" height="44"/>
                                 <constraints>
@@ -44,8 +95,8 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESf-bD-55S">
-                                <rect key="frame" x="166.66666666666666" y="679" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESf-bD-55S">
+                                <rect key="frame" x="120" y="679" width="135" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -54,24 +105,26 @@
                         <color key="backgroundColor" red="0.14992274939014805" green="0.72273862177832415" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="SuX-W8-50H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Aum-CK-ruf"/>
-                            <constraint firstItem="ESf-bD-55S" firstAttribute="top" secondItem="SuX-W8-50H" secondAttribute="bottom" constant="59" id="Fdw-Rx-Hiw"/>
+                            <constraint firstItem="ESf-bD-55S" firstAttribute="top" secondItem="Qgc-tW-RR4" secondAttribute="bottom" constant="59" id="7JC-eU-qIV"/>
+                            <constraint firstItem="Qgc-tW-RR4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7QM-RL-dma"/>
                             <constraint firstItem="rFr-Pu-R8d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ix5-sW-mW0"/>
-                            <constraint firstItem="SuX-W8-50H" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="NO3-dS-2Cf"/>
-                            <constraint firstItem="rFr-Pu-R8d" firstAttribute="centerX" secondItem="SuX-W8-50H" secondAttribute="centerX" id="NRT-Cn-jOF"/>
-                            <constraint firstItem="SuX-W8-50H" firstAttribute="top" secondItem="rFr-Pu-R8d" secondAttribute="bottom" constant="49" id="Nqy-0d-skM"/>
+                            <constraint firstItem="Qgc-tW-RR4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KbL-Zr-Fe1"/>
+                            <constraint firstItem="Qgc-tW-RR4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QYu-RO-jJk"/>
+                            <constraint firstItem="ESf-bD-55S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TMT-q6-H8Z"/>
                             <constraint firstItem="rFr-Pu-R8d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="Vs0-Bx-iOs"/>
-                            <constraint firstItem="Qef-V7-Zz7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XgX-w0-vBu"/>
-                            <constraint firstItem="Qef-V7-Zz7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dON-MA-cGG"/>
+                            <constraint firstItem="ESf-bD-55S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="fKI-Cm-5Jg"/>
                             <constraint firstItem="rFr-Pu-R8d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jkB-oc-c1N"/>
-                            <constraint firstItem="ESf-bD-55S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t8H-mB-b2q"/>
+                            <constraint firstItem="ESf-bD-55S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kSA-Tb-f3H"/>
+                            <constraint firstItem="Qgc-tW-RR4" firstAttribute="top" secondItem="rFr-Pu-R8d" secondAttribute="bottom" constant="49" id="udq-kq-Hov"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="QA" destination="Qef-V7-Zz7" id="sLb-pc-D4H"/>
-                        <outlet property="flashCard" destination="SuX-W8-50H" id="atu-D8-iI2"/>
+                        <outlet property="answer" destination="VH3-S6-Sca" id="enn-eY-YL1"/>
+                        <outlet property="answerCard" destination="dQ6-lu-f69" id="0in-80-mVd"/>
                         <outlet property="outerView" destination="8bC-Xf-vdC" id="CWa-ke-2xE"/>
+                        <outlet property="question" destination="Qef-V7-Zz7" id="lfD-xF-g3E"/>
+                        <outlet property="questionCard" destination="SuX-W8-50H" id="d6Q-qW-wns"/>
                         <outlet property="result" destination="ESf-bD-55S" id="Efp-4y-5gA"/>
                         <outlet property="searchBar" destination="rFr-Pu-R8d" id="b4Y-43-cFN"/>
                     </connections>
