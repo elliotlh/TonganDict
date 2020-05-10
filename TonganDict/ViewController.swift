@@ -18,12 +18,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var answer: UILabel!
     @IBOutlet weak var result: UILabel!
     
-    private var showingFront = true
+    private var showingQuestion = true
+    private var count = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        question.text = "Front"
-        answer.text = "Back"
+        question.text = "Initial"
+        answer.text = String(count)
         result.text = ""
     }
     
@@ -40,30 +41,24 @@ class ViewController: UIViewController {
     }
     
     func flipCardAnimation() {
-        UIView.transition(from: questionCard, to: answerCard, duration: 1, options: [UIView.AnimationOptions.transitionFlipFromRight, UIView.AnimationOptions.showHideTransitionViews], completion: nil)
-//        if showingFront {
-//            UIView.transition(from: questionCard, to: answerCard, duration: 1, options: UIView.AnimationOptions.transitionFlipFromRight, completion: nil)
-//        } else {
-//            UIView.transition(from: answerCard, to: questionCard, duration: 1, options: UIView.AnimationOptions.transitionFlipFromRight, completion: nil)
-//        }
+        if showingQuestion {
+            UIView.transition(from: questionCard, to: answerCard, duration: 1, options: [UIView.AnimationOptions.transitionFlipFromRight, UIView.AnimationOptions.showHideTransitionViews], completion: nil)
+            showingQuestion = false
+        } else {
+            UIView.transition(from: answerCard, to: questionCard, duration: 1, options: [UIView.AnimationOptions.transitionFlipFromRight, UIView.AnimationOptions.showHideTransitionViews], completion: nil)
+            showingQuestion = true
+        }
     }
     
     
     @IBAction func flipCard(_ gesture: UITapGestureRecognizer) {
-//        if showingFront {
-//            questionCard.backgroundColor = UIColor.red
-//            answerCard.backgroundColor = UIColor.red
-//            question.text = "HAHA"
-//            answer.text = "HAHA!"
-//            showingFront = false
-//        } else {
-//            questionCard.backgroundColor = UIColor.white
-//            answerCard.backgroundColor = UIColor.white
-//            question.text = "BOO"
-//            answer.text = "BOOO!"
-//            showingFront = true
-//        }
         flipCardAnimation()
+        if showingQuestion {
+            question.text = String(count)
+        } else {
+            answer.text = String(count)
+        }
+        count += 1
     }
     
     @IBAction func needsReview(_ gesture: UISwipeGestureRecognizer) {

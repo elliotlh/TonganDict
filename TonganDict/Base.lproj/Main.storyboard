@@ -39,11 +39,6 @@
                                                 <integer key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="NKb-Tg-Qgg" appends="YES" id="CBY-QV-kgV"/>
-                                            <outletCollection property="gestureRecognizers" destination="GtV-w1-Sjf" appends="YES" id="k2u-3S-9Xr"/>
-                                            <outletCollection property="gestureRecognizers" destination="Qy0-u8-6ih" appends="YES" id="6q7-Ih-7gm"/>
-                                        </connections>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CardView" translatesAutoresizingMaskIntoConstraints="NO" id="SuX-W8-50H">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="428"/>
@@ -69,14 +64,10 @@
                                                 <integer key="value" value="25"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="GtV-w1-Sjf" appends="YES" id="0F5-B3-BgQ"/>
-                                            <outletCollection property="gestureRecognizers" destination="NKb-Tg-Qgg" appends="YES" id="uci-GU-cZx"/>
-                                            <outletCollection property="gestureRecognizers" destination="Qy0-u8-6ih" appends="YES" id="Vdb-4N-mkq"/>
-                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="dQ6-lu-f69" firstAttribute="top" secondItem="Qgc-tW-RR4" secondAttribute="top" id="0S8-AF-qeV"/>
                                     <constraint firstItem="dQ6-lu-f69" firstAttribute="centerX" secondItem="Qgc-tW-RR4" secondAttribute="centerX" id="JVu-S0-eHf"/>
@@ -87,6 +78,11 @@
                                     <constraint firstItem="SuX-W8-50H" firstAttribute="trailing" secondItem="dQ6-lu-f69" secondAttribute="trailing" id="lOC-1u-YWm"/>
                                     <constraint firstItem="SuX-W8-50H" firstAttribute="top" secondItem="dQ6-lu-f69" secondAttribute="top" id="tfJ-16-wDj"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="j3m-k9-c3j" appends="YES" id="a9X-Yw-XYa"/>
+                                    <outletCollection property="gestureRecognizers" destination="ziI-G3-PWw" appends="YES" id="2kk-yN-ihZ"/>
+                                    <outletCollection property="gestureRecognizers" destination="H12-Ri-cJa" appends="YES" id="qto-kn-8gG"/>
+                                </connections>
                             </view>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Here" translatesAutoresizingMaskIntoConstraints="NO" id="rFr-Pu-R8d">
                                 <rect key="frame" x="0.0" y="99" width="375" height="44"/>
@@ -130,21 +126,21 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="NKb-Tg-Qgg">
+                <swipeGestureRecognizer direction="left" id="j3m-k9-c3j">
                     <connections>
-                        <action selector="flipCard:" destination="BYZ-38-t0r" id="jWn-EG-Xxz"/>
+                        <action selector="needsReview:" destination="BYZ-38-t0r" id="H9g-4h-U0V"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="ziI-G3-PWw">
+                    <connections>
+                        <action selector="gotItCorrect:" destination="BYZ-38-t0r" id="cyr-rP-o5q"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <tapGestureRecognizer id="H12-Ri-cJa">
+                    <connections>
+                        <action selector="flipCard:" destination="BYZ-38-t0r" id="TtH-g6-xzv"/>
                     </connections>
                 </tapGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="GtV-w1-Sjf">
-                    <connections>
-                        <action selector="gotItCorrect:" destination="BYZ-38-t0r" id="ojS-ZU-Iee"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="Qy0-u8-6ih">
-                    <connections>
-                        <action selector="needsReview:" destination="BYZ-38-t0r" id="4cD-Oq-3Wg"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="112.3152709359606"/>
         </scene>
