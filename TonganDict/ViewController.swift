@@ -77,8 +77,12 @@ class ViewController: UIViewController {
     }
     
     func resetCard(done: Bool) -> Void {
-        cardParentView.center = self.view.center
-        self.view.backgroundColor = self.BASE_COLOR
+        self.cardParentView.alpha = CGFloat(0)
+        self.cardParentView.center = self.view.center
+        UIView.animate(withDuration: 0.30, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
+            self.cardParentView.alpha = CGFloat(1)
+            self.view.backgroundColor = self.BASE_COLOR
+        }, completion: nil)
     }
     
     func manageStateChange(cardView: UIView, sender: UIPanGestureRecognizer) {
@@ -147,7 +151,7 @@ class ViewController: UIViewController {
                 cardView.center = CGPoint(x: cardView.center.x - self.SCREEN_WIDTH, y: cardView.center.y)
             }, completion: resetCard)
         } else {
-            UIView.animate(withDuration: 0.35, animations: {
+            UIView.animate(withDuration: 0.25, animations: {
                 cardView.center = self.view.center
                 self.view.backgroundColor = self.BASE_COLOR
             })
