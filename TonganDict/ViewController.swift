@@ -78,6 +78,7 @@ class ViewController: UIViewController {
     
     func resetCard(done: Bool) -> Void {
         cardParentView.center = self.view.center
+        self.view.backgroundColor = self.BASE_COLOR
     }
     
     func manageStateChange(cardView: UIView, sender: UIPanGestureRecognizer) {
@@ -138,15 +139,15 @@ class ViewController: UIViewController {
     
     func manageEndState(cardView: UIView) {
         if cardView.center.x >= SCREEN_WIDTH - MARGIN_OFFSET {
-            UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.35, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                 cardView.center = CGPoint(x: cardView.center.x + self.SCREEN_WIDTH, y: cardView.center.y)
             }, completion: resetCard)
         } else if cardView.center.x < MARGIN_OFFSET {
-            UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
+            UIView.animate(withDuration: 0.35, delay: 0, options: UIView.AnimationOptions.curveEaseOut, animations: {
                 cardView.center = CGPoint(x: cardView.center.x - self.SCREEN_WIDTH, y: cardView.center.y)
             }, completion: resetCard)
         } else {
-            UIView.animate(withDuration: 0.2, animations: {
+            UIView.animate(withDuration: 0.35, animations: {
                 cardView.center = self.view.center
                 self.view.backgroundColor = self.BASE_COLOR
             })
