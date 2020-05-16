@@ -20,20 +20,20 @@ class ViewController: UIViewController {
     @IBOutlet weak var result: UILabel!
     
     private var showingQuestion = true
-    private var previousXCord = CGFloat(25)
     private var count = 0
     private let MARGIN_OFFSET = CGFloat(25)
+    private let COLOR_OFFSET = CGFloat(100)
     private let SCREEN_WIDTH = UIScreen.main.bounds.width
-    private let BASE_BACKGROUND_COLOR = UIColor(red: 0.1499227494, green: 0.7227386218, blue: 1.0, alpha: 1.0)
-    private let CORRECT_COLOR = UIColor(red: 0.1373, green: 1, blue: 0.5255, alpha: 1.0) /* #23ff86 */
-    private let NEEDS_WORK_COLOR = UIColor(red: 1, green: 0.7529, blue: 0.1373, alpha: 1.0) /* #ffc023 */
+    private let BASE_COLOR = UIColor(red: 0.1499227494, green: 0.7227386218, blue: 1.0, alpha: 1.0)
+    private let BASE_SPECS = (CGFloat(0.1499227494), CGFloat(0.7227386218), CGFloat(1.0), CGFloat(1.0))
+    private let CORRECT_SPECS = (CGFloat(0.1373), CGFloat(1.0), CGFloat(0.5255), CGFloat(1.0))
+    private let NEEDS_WORK_SPECS = (CGFloat(1.0), CGFloat(0.7529), CGFloat(0.1373), CGFloat(1.0))
 
     override func viewDidLoad() {
         super.viewDidLoad()
         question.text = "Initial"
         answer.text = String(count)
         result.text = ""
-        previousXCord = self.view.center.x
     }
     
     func changeSearchPlaceholderColor() {
@@ -88,49 +88,52 @@ class ViewController: UIViewController {
         }
     }
     
-//    func getBackgroundColor() -> (CGFloat, CGFloat, CGFloat, CGFloat) {
-//        var red = CGFloat(0)
-//        var green = CGFloat(0)
-//        var blue = CGFloat(0)
-//        var alpha = CGFloat(0)
-//        self.view.backgroundColor?.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-//        return (red, green, blue, alpha)
-//    }
+    func getFromColor() -> (CGFloat, CGFloat, CGFloat, CGFloat) {
+        var red = CGFloat(0)
+        var green = CGFloat(0)
+        var blue = CGFloat(0)
+        var alpha = CGFloat(0)
+        self.view.backgroundColor?.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        return (red, green, blue, alpha)
+    }
     
     func generatePercentComplete(cardView: UIView) -> CGFloat {
         let distFromCenter = abs(self.view.center.x - cardView.center.x)
-        if distFromCenter > MARGIN_OFFSET {
+        if distFromCenter > COLOR_OFFSET {
             return CGFloat(1)
         }
-        return CGFloat(distFromCenter / MARGIN_OFFSET)
+        return CGFloat(distFromCenter / COLOR_OFFSET)
     }
     
-    func fadeToColor() {
-        
+    func fadeToColor(cardView: UIView) {
+        var toColor: (CGFloat, CGFloat, CGFloat, CGFloat)
+        let xCord = cardView.center.x
+        if correctColorZone(xCord: xCord) {
+            toColor = CORRECT_SPECS
+        } else if needsWorkColorZone(xCord: xCord) {
+            toColor = NEEDS_WORK_SPECS
+        } else {
+            return
+        }
+        let fromColor = BASE_SPECS
+        let percentage = generatePercentComplete(cardView: cardView)
+        let red = (toColor.0 - fromColor.0) * percentage + fromColor.0
+        let green = (toColor.1 - fromColor.1) * percentage + fromColor.1
+        let blue = (toColor.2 - fromColor.2) * percentage + fromColor.2
+        let alpha = (toColor.3 - fromColor.3) * percentage + fromColor.3
+        self.view.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
-    func movingTowardsCorrectColor(xCord: CGFloat) -> Bool {
-        return (xCord > previousXCord && xCord > self.view.center.x)
+    func correctColorZone(xCord: CGFloat) -> Bool {
+        return (xCord > self.view.center.x)
     }
     
-    func movingTowardsBaseColor(xCord: CGFloat) -> Bool {
-        return (xCord > previousXCord && xCord < self.view.center.x) || (xCord < previousXCord && xCord > self.view.center.x)
-    }
-    
-    func movingTowardsNeedsWorkColor(xCord: CGFloat) -> Bool {
-        return (xCord < previousXCord && xCord < self.view.center.x)
+    func needsWorkColorZone(xCord: CGFloat) -> Bool {
+        return (xCord < self.view.center.x)
     }
     
     func manageChangedState(cardView: UIView) {
-        let XCord = cardView.center.x
-        if movingTowardsBaseColor(xCord: XCord) {
-            let toColor = BASE_BACKGROUND_COLOR
-        } else if movingTowardsCorrectColor(xCord: XCord) {
-            let toColor = CORRECT_COLOR
-        } else {
-            let toColor = NEEDS_WORK_COLOR
-        }
-        previousXCord = cardView.center.x
+        fadeToColor(cardView: cardView)
     }
     
     func manageEndState(cardView: UIView) {
@@ -143,7 +146,10 @@ class ViewController: UIViewController {
                 cardView.center = CGPoint(x: cardView.center.x - self.SCREEN_WIDTH, y: cardView.center.y)
             }, completion: resetCard)
         } else {
-            UIView.animate(withDuration: 0.2, animations: {cardView.center = self.view.center})
+            UIView.animate(withDuration: 0.2, animations: {
+                cardView.center = self.view.center
+                self.view.backgroundColor = self.BASE_COLOR
+            })
         }
     }
 }
