@@ -21,7 +21,8 @@ class ViewController: UIViewController {
     
     private var showingQuestion = true
     private var count = 0
-    private let MARGIN_OFFSET = CGFloat(25)
+    private let divParam = (UIScreen.main.bounds.width / 2) / 0.50
+    private let MARGIN_OFFSET = CGFloat(10)
     private let COLOR_OFFSET = CGFloat(100)
     private let SCREEN_WIDTH = UIScreen.main.bounds.width
     private let BASE_COLOR = UIColor(red: 0.1499227494, green: 0.7227386218, blue: 1.0, alpha: 1.0)
@@ -79,6 +80,7 @@ class ViewController: UIViewController {
     func resetCard(done: Bool) -> Void {
         self.cardParentView.alpha = CGFloat(0)
         self.cardParentView.center = self.view.center
+        self.cardParentView.transform = .identity
         UIView.animate(withDuration: 0.30, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
             self.cardParentView.alpha = CGFloat(1)
             self.view.backgroundColor = self.BASE_COLOR
@@ -138,7 +140,9 @@ class ViewController: UIViewController {
     }
     
     func manageChangedState(cardView: UIView) {
+        let distanceMoved = cardView.center.x - self.view.center.x
         fadeToColor(cardView: cardView)
+        cardView.transform = CGAffineTransform(rotationAngle: distanceMoved / divParam)
     }
     
     func manageEndState(cardView: UIView) {
@@ -153,6 +157,7 @@ class ViewController: UIViewController {
         } else {
             UIView.animate(withDuration: 0.25, animations: {
                 cardView.center = self.view.center
+                cardView.transform = .identity
                 self.view.backgroundColor = self.BASE_COLOR
             })
         }
