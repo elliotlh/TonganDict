@@ -15,12 +15,15 @@ class FlashcardViewController: UIViewController {
     @IBOutlet weak var answerCard: UIView!
     @IBOutlet weak var outerView: UIView!
 //    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var star: UIImageView!
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var answer: UILabel!
     @IBOutlet weak var result: UILabel!
     
     private var showingQuestion = true
     private var count = 0
+    private let NOT_STARRED = UIColor.systemGray
+    private let STARRED = UIColor.systemYellow
     private let divParam = (UIScreen.main.bounds.width / 2) / 0.50
     private let MARGIN_OFFSET = CGFloat(10)
     private let COLOR_OFFSET = CGFloat(100)
@@ -35,6 +38,7 @@ class FlashcardViewController: UIViewController {
         question.text = "Initial"
         answer.text = String(count)
         result.text = ""
+        star.tintColor = .systemGray
     }
     
 //    func changeSearchPlaceholderColor() {
@@ -56,6 +60,14 @@ class FlashcardViewController: UIViewController {
         } else {
             UIView.transition(from: answerCard, to: questionCard, duration: 0.75, options: [UIView.AnimationOptions.transitionFlipFromLeft, UIView.AnimationOptions.showHideTransitionViews], completion: nil)
             showingQuestion = true
+        }
+    }
+    
+    @IBAction func toggleStarRating(_ gesture: UITapGestureRecognizer) {
+        if star.tintColor == self.NOT_STARRED {
+            star.tintColor = self.STARRED
+        } else {
+            star.tintColor = self.NOT_STARRED
         }
     }
     

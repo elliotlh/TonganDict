@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6D4623A2471B78A00EA9902 /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D462392471B78A00EA9902 /* DictionaryViewController.swift */; };
 		E6FCC75A24674DCA00FFB777 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FCC75924674DCA00FFB777 /* AppDelegate.swift */; };
 		E6FCC75C24674DCA00FFB777 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FCC75B24674DCA00FFB777 /* SceneDelegate.swift */; };
-		E6FCC75E24674DCA00FFB777 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FCC75D24674DCA00FFB777 /* ViewController.swift */; };
+		E6FCC75E24674DCA00FFB777 /* FlashcardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FCC75D24674DCA00FFB777 /* FlashcardViewController.swift */; };
 		E6FCC76124674DCA00FFB777 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FCC75F24674DCA00FFB777 /* Main.storyboard */; };
 		E6FCC76324674DCA00FFB777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6FCC76224674DCA00FFB777 /* Assets.xcassets */; };
 		E6FCC76624674DCA00FFB777 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6FCC76424674DCA00FFB777 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E6D462392471B78A00EA9902 /* DictionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
 		E6FCC75624674DCA00FFB777 /* TonganDict.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TonganDict.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FCC75924674DCA00FFB777 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6FCC75B24674DCA00FFB777 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E6FCC75D24674DCA00FFB777 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E6FCC75D24674DCA00FFB777 /* FlashcardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardViewController.swift; sourceTree = "<group>"; };
 		E6FCC76024674DCA00FFB777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6FCC76224674DCA00FFB777 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6FCC76524674DCA00FFB777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,8 +60,9 @@
 			children = (
 				E6FCC75924674DCA00FFB777 /* AppDelegate.swift */,
 				E6FCC75B24674DCA00FFB777 /* SceneDelegate.swift */,
-				E6FCC75D24674DCA00FFB777 /* ViewController.swift */,
+				E6FCC75D24674DCA00FFB777 /* FlashcardViewController.swift */,
 				E6FCC75F24674DCA00FFB777 /* Main.storyboard */,
+				E6D462392471B78A00EA9902 /* DictionaryViewController.swift */,
 				E6FCC76224674DCA00FFB777 /* Assets.xcassets */,
 				E6FCC76424674DCA00FFB777 /* LaunchScreen.storyboard */,
 				E6FCC76724674DCA00FFB777 /* Info.plist */,
@@ -138,8 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6FCC75E24674DCA00FFB777 /* ViewController.swift in Sources */,
+				E6FCC75E24674DCA00FFB777 /* FlashcardViewController.swift in Sources */,
 				E6FCC75A24674DCA00FFB777 /* AppDelegate.swift in Sources */,
+				E6D4623A2471B78A00EA9902 /* DictionaryViewController.swift in Sources */,
 				E6FCC75C24674DCA00FFB777 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

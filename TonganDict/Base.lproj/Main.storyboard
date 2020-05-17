@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Flashcard View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TonganDict" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FlashcardViewController" customModule="TonganDict" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="OuterView" id="8bC-Xf-vdC" customClass="OuterView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,17 +65,30 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Dnq-u1-Eyh">
+                                        <rect key="frame" x="299" y="6.3333333333333321" width="31" height="40.666666666666671"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="cUG-bP-Kmk" appends="YES" id="h6Z-5X-FNN"/>
+                                        </connections>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="dQ6-lu-f69" firstAttribute="top" secondItem="Qgc-tW-RR4" secondAttribute="top" id="0S8-AF-qeV"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dnq-u1-Eyh" secondAttribute="bottom" constant="381" id="0ul-DI-Od3"/>
+                                    <constraint firstItem="Dnq-u1-Eyh" firstAttribute="top" secondItem="Qgc-tW-RR4" secondAttribute="top" constant="6.0000000000000009" id="7iS-T8-Dd7"/>
+                                    <constraint firstItem="Dnq-u1-Eyh" firstAttribute="leading" secondItem="Qgc-tW-RR4" secondAttribute="leading" constant="299" id="ETY-Qb-dBZ"/>
+                                    <constraint firstItem="SuX-W8-50H" firstAttribute="centerX" secondItem="Qgc-tW-RR4" secondAttribute="centerX" id="Ia2-Uq-5uE"/>
                                     <constraint firstItem="dQ6-lu-f69" firstAttribute="centerX" secondItem="Qgc-tW-RR4" secondAttribute="centerX" id="JVu-S0-eHf"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dnq-u1-Eyh" secondAttribute="trailing" constant="13" id="L98-PV-Yw9"/>
                                     <constraint firstItem="SuX-W8-50H" firstAttribute="leading" secondItem="dQ6-lu-f69" secondAttribute="leading" id="LdJ-9p-dvc"/>
                                     <constraint firstItem="SuX-W8-50H" firstAttribute="leading" secondItem="Qgc-tW-RR4" secondAttribute="leading" id="OEr-mx-a5B"/>
                                     <constraint firstItem="dQ6-lu-f69" firstAttribute="bottom" secondItem="SuX-W8-50H" secondAttribute="bottom" id="OQQ-nj-0LE"/>
                                     <constraint firstItem="SuX-W8-50H" firstAttribute="centerY" secondItem="Qgc-tW-RR4" secondAttribute="centerY" id="W2O-Zf-rt4"/>
                                     <constraint firstItem="SuX-W8-50H" firstAttribute="trailing" secondItem="dQ6-lu-f69" secondAttribute="trailing" id="lOC-1u-YWm"/>
+                                    <constraint firstItem="SuX-W8-50H" firstAttribute="centerY" secondItem="Qgc-tW-RR4" secondAttribute="centerY" id="mnQ-wo-vrx"/>
                                     <constraint firstItem="SuX-W8-50H" firstAttribute="top" secondItem="dQ6-lu-f69" secondAttribute="top" id="tfJ-16-wDj"/>
                                 </constraints>
                                 <connections>
@@ -83,13 +96,6 @@
                                     <outletCollection property="gestureRecognizers" destination="uva-64-64b" appends="YES" id="pqa-E0-wfO"/>
                                 </connections>
                             </view>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Here" translatesAutoresizingMaskIntoConstraints="NO" id="rFr-Pu-R8d">
-                                <rect key="frame" x="0.0" y="99" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="n7h-Ma-v1l"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESf-bD-55S">
                                 <rect key="frame" x="120" y="679" width="135" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -102,15 +108,12 @@
                         <constraints>
                             <constraint firstItem="ESf-bD-55S" firstAttribute="top" secondItem="Qgc-tW-RR4" secondAttribute="bottom" constant="59" id="7JC-eU-qIV"/>
                             <constraint firstItem="Qgc-tW-RR4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7QM-RL-dma"/>
-                            <constraint firstItem="rFr-Pu-R8d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ix5-sW-mW0"/>
                             <constraint firstItem="Qgc-tW-RR4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KbL-Zr-Fe1"/>
                             <constraint firstItem="Qgc-tW-RR4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QYu-RO-jJk"/>
                             <constraint firstItem="ESf-bD-55S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TMT-q6-H8Z"/>
-                            <constraint firstItem="rFr-Pu-R8d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="Vs0-Bx-iOs"/>
                             <constraint firstItem="ESf-bD-55S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="fKI-Cm-5Jg"/>
-                            <constraint firstItem="rFr-Pu-R8d" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jkB-oc-c1N"/>
+                            <constraint firstItem="Qgc-tW-RR4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="148" id="fax-Uu-5cN"/>
                             <constraint firstItem="ESf-bD-55S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kSA-Tb-f3H"/>
-                            <constraint firstItem="Qgc-tW-RR4" firstAttribute="top" secondItem="rFr-Pu-R8d" secondAttribute="bottom" constant="49" id="udq-kq-Hov"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -122,7 +125,7 @@
                         <outlet property="question" destination="Qef-V7-Zz7" id="lfD-xF-g3E"/>
                         <outlet property="questionCard" destination="SuX-W8-50H" id="d6Q-qW-wns"/>
                         <outlet property="result" destination="ESf-bD-55S" id="Efp-4y-5gA"/>
-                        <outlet property="searchBar" destination="rFr-Pu-R8d" id="b4Y-43-cFN"/>
+                        <outlet property="star" destination="Dnq-u1-Eyh" id="X9X-kt-FKs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -136,8 +139,31 @@
                         <action selector="panGestureHandler:" destination="BYZ-38-t0r" id="vnb-n0-3vm"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="cUG-bP-Kmk">
+                    <connections>
+                        <action selector="toggleStarRating:" destination="BYZ-38-t0r" id="CsC-gF-0hA"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="112.3152709359606"/>
         </scene>
+        <!--Dictionary View Controller-->
+        <scene sceneID="ztB-1F-NUh">
+            <objects>
+                <viewController id="7c8-4n-4a2" customClass="DictionaryViewController" customModule="TonganDict" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="96J-9E-koU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Puh-ui-j5G"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YZh-Ux-vCT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="377" y="762"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+    </resources>
 </document>
