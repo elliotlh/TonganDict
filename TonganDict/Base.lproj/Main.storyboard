@@ -11,18 +11,17 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="FlashcardViewController" customModule="TonganDict" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" restorationIdentifier="OuterView" id="8bC-Xf-vdC" customClass="OuterView">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="OuterView" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-Xf-vdC" customClass="OuterView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qgc-tW-RR4">
-                                <rect key="frame" x="16" y="192" width="343" height="428"/>
+                                <rect key="frame" x="18.666666666666657" y="203" width="337.66666666666674" height="406"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQ6-lu-f69">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="428"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="337.66666666666669" height="406"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VH3-S6-Sca">
-                                                <rect key="frame" x="143" y="203.66666666666669" width="57" height="21"/>
+                                                <rect key="frame" x="140.33333333333334" y="192.66666666666669" width="57" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -30,8 +29,8 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="VH3-S6-Sca" firstAttribute="centerY" secondItem="dQ6-lu-f69" secondAttribute="centerY" id="9Dr-Se-GoJ"/>
-                                            <constraint firstItem="VH3-S6-Sca" firstAttribute="centerX" secondItem="dQ6-lu-f69" secondAttribute="centerX" id="WPh-vX-6hC"/>
+                                            <constraint firstItem="VH3-S6-Sca" firstAttribute="centerY" secondItem="dQ6-lu-f69" secondAttribute="centerY" id="C5A-mA-1hc"/>
+                                            <constraint firstItem="VH3-S6-Sca" firstAttribute="centerX" secondItem="dQ6-lu-f69" secondAttribute="centerX" id="wSK-Iq-aUF"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
@@ -41,10 +40,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CardView" translatesAutoresizingMaskIntoConstraints="NO" id="SuX-W8-50H">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="428"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="337.66666666666669" height="406"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qef-V7-Zz7">
-                                                <rect key="frame" x="137" y="203.66666666666669" width="69" height="21"/>
+                                                <rect key="frame" x="134.33333333333334" y="192.66666666666669" width="69" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -53,10 +52,8 @@
                                         <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstItem="Qef-V7-Zz7" firstAttribute="centerX" secondItem="SuX-W8-50H" secondAttribute="centerX" id="57V-8v-FnV"/>
-                                            <constraint firstItem="Qef-V7-Zz7" firstAttribute="centerX" secondItem="SuX-W8-50H" secondAttribute="centerX" id="Qyh-Lb-Wep"/>
-                                            <constraint firstItem="Qef-V7-Zz7" firstAttribute="centerY" secondItem="SuX-W8-50H" secondAttribute="centerY" id="UTv-BX-Gp3"/>
-                                            <constraint firstItem="Qef-V7-Zz7" firstAttribute="centerY" secondItem="SuX-W8-50H" secondAttribute="centerY" id="Vpk-zX-x5N"/>
+                                            <constraint firstItem="Qef-V7-Zz7" firstAttribute="centerY" secondItem="SuX-W8-50H" secondAttribute="centerY" id="B2t-rc-CXk"/>
+                                            <constraint firstItem="Qef-V7-Zz7" firstAttribute="centerX" secondItem="SuX-W8-50H" secondAttribute="centerX" id="bwx-v2-lWX"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
@@ -66,7 +63,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Dnq-u1-Eyh">
-                                        <rect key="frame" x="299" y="6.3333333333333321" width="31" height="40.666666666666671"/>
+                                        <rect key="frame" x="303" y="11.999999999999989" width="22" height="20.000000000000011"/>
                                         <gestureRecognizers/>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="cUG-bP-Kmk" appends="YES" id="h6Z-5X-FNN"/>
@@ -76,28 +73,25 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="dQ6-lu-f69" firstAttribute="top" secondItem="Qgc-tW-RR4" secondAttribute="top" id="0S8-AF-qeV"/>
-                                    <constraint firstAttribute="bottom" secondItem="Dnq-u1-Eyh" secondAttribute="bottom" constant="381" id="0ul-DI-Od3"/>
-                                    <constraint firstItem="Dnq-u1-Eyh" firstAttribute="top" secondItem="Qgc-tW-RR4" secondAttribute="top" constant="6.0000000000000009" id="7iS-T8-Dd7"/>
-                                    <constraint firstItem="Dnq-u1-Eyh" firstAttribute="leading" secondItem="Qgc-tW-RR4" secondAttribute="leading" constant="299" id="ETY-Qb-dBZ"/>
-                                    <constraint firstItem="SuX-W8-50H" firstAttribute="centerX" secondItem="Qgc-tW-RR4" secondAttribute="centerX" id="Ia2-Uq-5uE"/>
-                                    <constraint firstItem="dQ6-lu-f69" firstAttribute="centerX" secondItem="Qgc-tW-RR4" secondAttribute="centerX" id="JVu-S0-eHf"/>
-                                    <constraint firstAttribute="trailing" secondItem="Dnq-u1-Eyh" secondAttribute="trailing" constant="13" id="L98-PV-Yw9"/>
-                                    <constraint firstItem="SuX-W8-50H" firstAttribute="leading" secondItem="dQ6-lu-f69" secondAttribute="leading" id="LdJ-9p-dvc"/>
-                                    <constraint firstItem="SuX-W8-50H" firstAttribute="leading" secondItem="Qgc-tW-RR4" secondAttribute="leading" id="OEr-mx-a5B"/>
-                                    <constraint firstItem="dQ6-lu-f69" firstAttribute="bottom" secondItem="SuX-W8-50H" secondAttribute="bottom" id="OQQ-nj-0LE"/>
-                                    <constraint firstItem="SuX-W8-50H" firstAttribute="centerY" secondItem="Qgc-tW-RR4" secondAttribute="centerY" id="W2O-Zf-rt4"/>
-                                    <constraint firstItem="SuX-W8-50H" firstAttribute="trailing" secondItem="dQ6-lu-f69" secondAttribute="trailing" id="lOC-1u-YWm"/>
-                                    <constraint firstItem="SuX-W8-50H" firstAttribute="centerY" secondItem="Qgc-tW-RR4" secondAttribute="centerY" id="mnQ-wo-vrx"/>
-                                    <constraint firstItem="SuX-W8-50H" firstAttribute="top" secondItem="dQ6-lu-f69" secondAttribute="top" id="tfJ-16-wDj"/>
+                                    <constraint firstItem="SuX-W8-50H" firstAttribute="top" secondItem="Dnq-u1-Eyh" secondAttribute="bottom" constant="-32" id="BnX-o6-yyj"/>
+                                    <constraint firstItem="SuX-W8-50H" firstAttribute="centerY" secondItem="Qgc-tW-RR4" secondAttribute="centerY" id="S8m-Us-J0K"/>
+                                    <constraint firstItem="dQ6-lu-f69" firstAttribute="centerX" secondItem="Qgc-tW-RR4" secondAttribute="centerX" id="W1f-3p-k7h"/>
+                                    <constraint firstItem="Dnq-u1-Eyh" firstAttribute="leading" secondItem="SuX-W8-50H" secondAttribute="trailing" constant="-34.666666666666686" id="ZzT-AW-QLr"/>
+                                    <constraint firstItem="dQ6-lu-f69" firstAttribute="top" secondItem="Qgc-tW-RR4" secondAttribute="top" id="fvL-nd-guq"/>
+                                    <constraint firstItem="dQ6-lu-f69" firstAttribute="leading" secondItem="Qgc-tW-RR4" secondAttribute="leading" id="kvw-d6-yZx"/>
+                                    <constraint firstItem="dQ6-lu-f69" firstAttribute="centerY" secondItem="Qgc-tW-RR4" secondAttribute="centerY" id="nrY-sy-48H"/>
+                                    <constraint firstItem="SuX-W8-50H" firstAttribute="centerX" secondItem="Qgc-tW-RR4" secondAttribute="centerX" id="s26-08-huI"/>
+                                    <constraint firstItem="dQ6-lu-f69" firstAttribute="leading" secondItem="SuX-W8-50H" secondAttribute="leading" id="uBV-PA-jaj"/>
+                                    <constraint firstItem="dQ6-lu-f69" firstAttribute="top" secondItem="SuX-W8-50H" secondAttribute="top" id="zWd-0s-hyq"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="H12-Ri-cJa" appends="YES" id="qto-kn-8gG"/>
                                     <outletCollection property="gestureRecognizers" destination="uva-64-64b" appends="YES" id="pqa-E0-wfO"/>
                                 </connections>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESf-bD-55S">
-                                <rect key="frame" x="120" y="679" width="135" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="ESf-bD-55S">
+                                <rect key="frame" x="19" y="89" width="337" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -106,14 +100,10 @@
                         <color key="backgroundColor" red="0.14992274939014805" green="0.72273862177832415" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="ESf-bD-55S" firstAttribute="top" secondItem="Qgc-tW-RR4" secondAttribute="bottom" constant="59" id="7JC-eU-qIV"/>
-                            <constraint firstItem="Qgc-tW-RR4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7QM-RL-dma"/>
-                            <constraint firstItem="Qgc-tW-RR4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KbL-Zr-Fe1"/>
-                            <constraint firstItem="Qgc-tW-RR4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QYu-RO-jJk"/>
-                            <constraint firstItem="ESf-bD-55S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TMT-q6-H8Z"/>
-                            <constraint firstItem="ESf-bD-55S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="fKI-Cm-5Jg"/>
-                            <constraint firstItem="Qgc-tW-RR4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="148" id="fax-Uu-5cN"/>
-                            <constraint firstItem="ESf-bD-55S" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kSA-Tb-f3H"/>
+                            <constraint firstItem="Qgc-tW-RR4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18.777245208810655" id="PIW-Vy-t6F"/>
+                            <constraint firstItem="Qgc-tW-RR4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TOB-1F-YAj"/>
+                            <constraint firstItem="Qgc-tW-RR4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZUh-xZ-C7f"/>
+                            <constraint firstItem="Qgc-tW-RR4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="158.86005717286753" id="kEl-uY-qJn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

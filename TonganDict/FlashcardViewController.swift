@@ -14,7 +14,6 @@ class FlashcardViewController: UIViewController {
     @IBOutlet weak var cardParentView: UIView!
     @IBOutlet weak var answerCard: UIView!
     @IBOutlet weak var outerView: UIView!
-//    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var star: UIImageView!
     @IBOutlet weak var question: UILabel!
     @IBOutlet weak var answer: UILabel!
@@ -25,9 +24,12 @@ class FlashcardViewController: UIViewController {
     private let NOT_STARRED = UIColor.systemGray
     private let STARRED = UIColor.systemYellow
     private let divParam = (UIScreen.main.bounds.width / 2) / 0.50
+    private let TEXT_OFFSET = CGFloat(30)
     private let MARGIN_OFFSET = CGFloat(10)
     private let COLOR_OFFSET = CGFloat(100)
     private let SCREEN_WIDTH = UIScreen.main.bounds.width
+    private let GOT_IT_RIGHT = "Got It Correct"
+    private let NEEDS_WORK = "Needs Work"
     private let BASE_COLOR = UIColor(red: 0.1499227494, green: 0.7227386218, blue: 1.0, alpha: 1.0)
     private let BASE_SPECS = (CGFloat(0.1499227494), CGFloat(0.7227386218), CGFloat(1.0), CGFloat(1.0))
     private let CORRECT_SPECS = (CGFloat(0.1373), CGFloat(1.0), CGFloat(0.5255), CGFloat(1.0))
@@ -38,19 +40,12 @@ class FlashcardViewController: UIViewController {
         question.text = "Initial"
         answer.text = String(count)
         result.text = ""
+        result.textColor = .white
         star.tintColor = .systemGray
     }
     
-//    func changeSearchPlaceholderColor() {
-//        let searchField = searchBar.value(forKey: "searchField") as? UITextField
-//        searchField?.textColor = UIColor.white
-//        let placeholderLabel = searchField?.value(forKey: "placeholderLabel") as? UILabel
-//        placeholderLabel?.textColor = UIColor.white
-//    }
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //changeSearchPlaceholderColor()
     }
     
     func flipCardAnimation() {
@@ -96,6 +91,7 @@ class FlashcardViewController: UIViewController {
         UIView.animate(withDuration: 0.30, delay: 0, options: UIView.AnimationOptions.curveLinear, animations: {
             self.cardParentView.alpha = CGFloat(1)
             self.view.backgroundColor = self.BASE_COLOR
+            self.result.text = ""
         }, completion: nil)
     }
     
@@ -155,6 +151,23 @@ class FlashcardViewController: UIViewController {
         let distanceMoved = cardView.center.x - self.view.center.x
         fadeToColor(cardView: cardView)
         cardView.transform = CGAffineTransform(rotationAngle: distanceMoved / divParam)
+        animateText(distanceMoved: distanceMoved)
+    }
+    
+    func animateText(distanceMoved: CGFloat) {
+        var animate: (Bool, String) = (false, "")
+        if distanceMoved > self.TEXT_OFFSET && self.result.text != self.GOT_IT_RIGHT {
+            animate = (true, self.GOT_IT_RIGHT)
+        } else if distanceMoved < -(self.TEXT_OFFSET) && self.result.text != self.NEEDS_WORK {
+            animate = (true, self.NEEDS_WORK)
+        } else if abs(distanceMoved) < self.TEXT_OFFSET && self.result.text != "" {
+            animate = (true, "")
+        }
+        if animate.0 {
+            UIView.transition(with: self.result, duration: 0.25, options: UIView.AnimationOptions.transitionCrossDissolve, animations: {
+                self.result.text = animate.1
+            }, completion: nil)
+        }
     }
     
     func manageEndState(cardView: UIView) {
